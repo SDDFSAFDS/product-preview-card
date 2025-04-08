@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img,picture{
+    max-width: 100%;
+    display: block;
+}
+:root{
+    --Green-500: hsl(158, 36%, 37%);
+    --Green-700: hsl(158, 42%, 18%);
+    --Black: hsl(212, 21%, 14%);
+    --Grey: hsl(228, 12%, 48%);
+    --Cream: hsl(30, 38%, 92%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    background-color: var(--Cream);
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* place-content: center;  place-content = justify-content */
+}
+#product{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(1,1fr);
+    max-width: 600px;
+    margin: 16px;
+    background-color: var(--White);
+    overflow: hidden;
+    border-radius: 10px;
+}
+#product .product-content{
+    padding: 32px;
+    /* background-color: tomato; */
+}
+#product img{
+    border-top-left-radius: 10px;
+}
+#product .product-content .category{
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--Grey);
+}
+#product .product-content h1{
+    font-family: "Fraunces", serif;
+    margin: 20px 0;
+    line-height: 1;
+    color: var(--Black);
+}
+#product .product-content p{
+    color: var(--Grey);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.price{
+    display: flex;align-items: center;
+}
+#product .product-content         .discount-price{
+    color: var(--Green-500);
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Fraunces", serif;
+    margin-right: 20px;
+}
+#product .product-content  .original-price{
+    color: var(--Grey);
+} 
+#product .product-content .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    background-color: var(--Green-500);
+    color: var(--White);
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#product .product-content .cart::before{
+    content: "";
+    background-image: url(images/icon-cart.svg);
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+@media (min-width:700px){
+    #product{
+
+        grid-template-columns: repeat(2,1fr);
+    }
+}
